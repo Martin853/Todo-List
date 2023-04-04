@@ -24,4 +24,24 @@ nav {
   width: 80%;
   margin: auto;
   background-color: $background-color;
+  display: flex;
+  justify-content: center;
+}
+
+#add-task {
+  border: none;
+  outline: none;
+  margin-top: 2rem;
+  width: 250px;
+  height: 45px;
+  font-size: 24px;
+  background-color: $primary-color;
+  color: black;
+  border-radius: 15px;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $hover-color;
+    cursor: pointer;
+  }
 }
