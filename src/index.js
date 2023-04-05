@@ -1,4 +1,5 @@
 // Imports
+import { TodoList } from "./constructor";
 import "./styles/main.scss";
 
 // Variables
@@ -8,6 +9,8 @@ const modal = document.querySelector("#modal");
 const cancelButton = document.querySelector("#cancel");
 
 // Task List
+
+const taskList = new TodoList();
 
 // Add Task Button
 
