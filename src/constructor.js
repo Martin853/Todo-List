@@ -21,7 +21,7 @@ export function Task(taskTitle, taskDescription, dueDate) {
   };
 
   this.updateDescription = function (newDescription) {
-    this.taskTitle = newDescription;
+    this.taskDescription = newDescription;
   };
 
   this.updateDueDate = function (newDueDate) {
