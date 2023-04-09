@@ -34,6 +34,31 @@ export function displayTasks(list, taskList) {
       displayTasks(list, taskList);
     });
 
+    // Edit Button
+
+    editButton.addEventListener("click", function () {
+      if (editButton.innerText === "Save") {
+        editButton.innerText = "Edit";
+        taskTitle.contentEditable = false;
+        taskDescription.contentEditable = false;
+        taskDueDate.contentEditable = false;
+        taskTitle.classList.remove("editable");
+        taskDescription.classList.remove("editable");
+        taskDueDate.classList.remove("editable");
+        list[i].updateTitle(taskTitle.innerText);
+        list[i].updateDescription(taskDescription.innerText);
+        list[i].updateDueDate(taskDueDate.innerText);
+        displayTasks(list, taskList);
+      }
+      editButton.innerText = "Save";
+      taskTitle.contentEditable = true;
+      taskDescription.contentEditable = true;
+      taskDueDate.contentEditable = true;
+      taskTitle.classList.add("editable");
+      taskDescription.classList.add("editable");
+      taskDueDate.classList.add("editable");
+    });
+
     // Text Content Group
 
     textContent.append(taskTitle, taskDescription, taskDueDate);

@@ -180,3 +180,7 @@ nav {
 .delete {
   @include button-styles();
 }
+
+.editable {
+  border: solid 1px black;
+}
