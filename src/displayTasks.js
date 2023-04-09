@@ -32,6 +32,7 @@ export function displayTasks(list, taskList) {
     deleteButton.addEventListener("click", function () {
       taskList.removeTask(i);
       displayTasks(list, taskList);
+      localStorage.setItem("taskList", JSON.stringify(taskList));
     });
 
     // Edit Button
@@ -49,6 +50,7 @@ export function displayTasks(list, taskList) {
         list[i].updateDescription(taskDescription.innerText);
         list[i].updateDueDate(taskDueDate.innerText);
         displayTasks(list, taskList);
+        localStorage.setItem("taskList", JSON.stringify(taskList));
       }
       editButton.innerText = "Save";
       taskTitle.contentEditable = true;

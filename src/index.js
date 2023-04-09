@@ -54,13 +54,30 @@ saveButton.addEventListener("click", function () {
   taskDueDateInput.value = "";
   modal.style.display = "none";
 
+  // Store the task list in local storage
+  localStorage.setItem("taskList", JSON.stringify(taskList));
+
   // Update the list
 
   updateTaskList();
-
-  console.log(TodoList);
 });
 
 function updateTaskList() {
   displayTasks(taskList.tasks, taskList);
+}
+
+// Load from local storage
+const storedTasks = JSON.parse(localStorage.getItem("taskList"));
+console.log(storedTasks);
+
+if (typeof storedTasks === "object" && storedTasks !== null) {
+  for (const taskData of storedTasks.tasks) {
+    const task = new Task(
+      taskData.taskTitle,
+      taskData.taskDescription,
+      taskData.dueDate
+    );
+    taskList.addTask(task);
+    displayTasks(taskList.tasks, taskList);
+  }
 }

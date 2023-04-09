@@ -14,7 +14,6 @@ export function Task(taskTitle, taskDescription, dueDate) {
   this.taskTitle = taskTitle;
   this.taskDescription = taskDescription;
   this.dueDate = dueDate;
-  this.status = "Incomplete";
 
   this.updateTitle = function (newTitle) {
     this.taskTitle = newTitle;
